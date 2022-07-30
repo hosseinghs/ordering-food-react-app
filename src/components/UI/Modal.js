@@ -20,7 +20,6 @@ const Modal = ({ children }) => {
     <>
       {createPortal(<Backdrop />, protalElem)}
       {createPortal(<ModalOverlay>{children}</ModalOverlay>, protalElem)}
-      {children}
     </>
   );
 };
