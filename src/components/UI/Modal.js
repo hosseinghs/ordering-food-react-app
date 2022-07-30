@@ -1,8 +1,8 @@
 import { createPortal } from "react-dom";
 import classes from "../../assets/style/modal.module.css";
 
-const Backdrop = () => {
-  return <div className={classes.backdrop}></div>;
+const Backdrop = ({ onCartClose }) => {
+  return <div className={classes.backdrop} onClick={onCartClose}></div>;
 };
 
 const ModalOverlay = ({ children }) => {

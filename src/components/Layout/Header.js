@@ -1,11 +1,13 @@
 import HeaderCartBtn from "./HeaderCartBtn";
 import MealsImg from "../../assets/img/meals.jpg";
-const Header = () => {
+const Header = ({ onCartClick }) => {
   return (
     <>
       <header className="w-full h-20 flex items-center justify-between px-16 bg-[#8a2b06] text-white shadow z-10">
         <h1 className="text-xl font-extrabold">ReactMeals</h1>
-        <HeaderCartBtn />
+        <span onClick={onCartClick}>
+          <HeaderCartBtn />
+        </span>
       </header>
       <div className=" overflow-hidden z-0">
         <img
