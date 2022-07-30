@@ -1,3 +1,5 @@
+import MealItemForm from "./MealItemForm";
+
 const MealItem = ({ name, desc, price }) => {
   const _price = `$${price.toLocaleString()}`;
   return (
@@ -7,7 +9,9 @@ const MealItem = ({ name, desc, price }) => {
         <div className="text-sm font-normal">{desc}</div>
         <div className="text-lg font-bold text-red-500">{_price}</div>
       </div>
-      <div></div>
+      <div>
+        <MealItemForm />
+      </div>
     </li>
   );
 };
