@@ -14,7 +14,12 @@ const MealItemForm = () => {
           defaultValue: "1",
         }}
       />
-      <button type="submit">+ Add</button>
+      <button
+        className="w-full mt-2 text-lg font-bold rounded-full bg-red-700 text-white"
+        type="submit"
+      >
+        + Add
+      </button>
     </form>
   );
 };

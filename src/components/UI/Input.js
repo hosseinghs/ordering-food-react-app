@@ -2,7 +2,7 @@ const Input = ({ label, input }) => {
   return (
     <div>
       <label htmlFor={input.id}>{label}</label>
-      <input {...input} />
+      <input className="border rounded-md ml-2" {...input} />
     </div>
   );
 };
