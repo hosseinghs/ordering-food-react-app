@@ -8,6 +8,7 @@ const defaultCartState = {
 
 const cartReducer = (state, { k, v }) => {
   if (k === "ADD") {
+    console.log('here');
     const updatedItems = state.items.cancat(v);
     const updatedTptalAmount = state.totalAmount + v.price * v.amount;
     return {
