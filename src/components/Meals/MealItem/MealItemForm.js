@@ -7,7 +7,6 @@ const MealItemForm = ({ onAddToCart }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNum = +enteredAmount;
     if (
@@ -18,11 +17,13 @@ const MealItemForm = ({ onAddToCart }) => {
       setIsAmountValid(false);
       return;
     }
+    
     onAddToCart(enteredAmountNum);
   };
   return (
     <form onSubmit={submitHandler}>
       <Input
+        ref={amountInputRef}
         label="Amount"
         input={{
           id: "amount",
