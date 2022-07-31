@@ -1,6 +1,19 @@
+import { useContext } from "react";
+import CartContext from "../../../context/Cart";
 import MealItemForm from "./MealItemForm";
 
-const MealItem = ({ name, desc, price }) => {
+const MealItem = ({ id, name, desc, price }) => {
+  const { addItem } = useContext(CartContext);
+
+  const addToCartHandler = (amount) => {
+    addItem({
+      id,
+      amount,
+      price,
+      name,
+    });
+  };
+
   const _price = `$${price.toLocaleString()}`;
   return (
     <li className="flex items-center justify-between p-2 my-4">
@@ -10,7 +23,7 @@ const MealItem = ({ name, desc, price }) => {
         <div className="text-lg font-bold text-red-500">{_price}</div>
       </div>
       <div>
-        <MealItemForm />
+        <MealItemForm onAddToCart={addToCartHandler} />
       </div>
     </li>
   );
